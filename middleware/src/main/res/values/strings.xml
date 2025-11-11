@@ -1,0 +1,62 @@
+<resources>
+    <string name="app_name">Open Project</string>
+    <string name="cancel">Cancel</string>
+    <string name="confirm">OK</string>
+    <string name="delete">Delete</string>
+    <string name="save">Save</string>
+
+    <string name="network_error_tip">Network error. Please try again later</string>
+    <string name="bluetooth_no_open_tip">Bluetooth is off, please check</string>
+    <string name="add_glass">Add Glass</string>
+    <string name="unbind_glass">Unbind Glass</string>
+    <string name="translate">Translate</string>
+    <string name="remote_control">Remote Control</string>
+    <string name="album">Album</string>
+    <string name="remote_shot">Remote Shooting</string>
+
+    <!--add device-->
+    <string name="pair_glass_search_title">Searching…</string>
+    <string name="pair_glass_search_tips">Please hold your Glasses close to your phone</string>
+    <string name="glass_search_question">Search Question</string>
+    <string name="glass_search_again">Rescan</string>
+    <string name="pair">Pairing</string>
+    <string name="device_pairing">Pairing device…</string>
+    <string name="loading_data">Loading the data…</string>
+    <string name="cofirm_glass_bind">Please confirm pairing on the Glasses</string>
+    <string name="connect_success">Connection successful</string>
+    <string name="connect_fail">Connection failed. Please try again</string>
+    <string name="pair_glass_retry">Retry</string>
+    <string name="location_service_not_turned_on">Location service not turned on</string>
+    <string name="click_to_confirm_to_start_the_location_service">Click to confirm to start the location service</string>
+    <string name="permission_not_enabled">Permission not enabled</string>
+    <string name="open_bluetooth_and_location_tip">Click to confirm to enable Bluetooth permissions and location permissions</string>
+    <string name="bluetooth_not_turned_on">Bluetooth not turned on</string>
+    <string name="click_ok_to_turn_on_bluetooth">Click OK to turn on Bluetooth</string>
+    <string name="glass_search_finish">Search complete</string>
+    <string name="glass_search_no_device_tips">If the device is not scanned, you can try to "scan the code to add" or "re-scan"</string>
+    <string name="glass_search_no_device">No device scanned</string>
+    <string name="unable_to_search_for_device">Device not found?</string>
+    <string name="glass_search_help"><![CDATA[<b><br>1. Please confirm that the <font color=#0064FE>device that needs to be connected has Bluetooth function enabled</font> and detection function enabled, and the <font color=#0064FE>battery is sufficient</font>. If the Bluetooth function is not turned on or the battery is low, it will cause the device to be unable to be searched;</br><br>
+    2. Please ensure that the searched <font color=#0064FE>device is not connected to any other Bluetooth devices of the same type</font>. If so, please disconnect and pair again. The searched device has been paired with other devices, which may result in being unable to be searched;</br><br>
+    3. Please ensure that the phone connected to <font color=#0064FE>has enabled location service permissions and is within a valid range (10 meters)</font>, and the Bluetooth switch is turned on. If the two devices are too far away, it will result in inability to search;</br></b>]]></string>
+    <string name="pair_glass_binding_error_binded">The device has been bound. Please unbind it first</string>
+    <!--add device-->
+
+    <!--unbind device-->
+    <string name="glass_unbind_tips">This will clear all data about the device from the phone and glasses \n\nAfter the device is deleted, if it is used again, it needs to be added again</string>
+    <string name="unbind_success">Successfully unbound</string>
+    <string name="device_no_connect_tip">Device not connected, please check the device status</string>
+    <!--unbind device-->
+
+    <!--Simultaneous-->
+    <string name="translate_simultaneous">Simultaneous</string>
+    <string name="translate_source">Source language</string>
+    <string name="translate_target">Target language</string>
+    <string name="english">English</string>
+    <string name="simplified_chinese">Chinese</string>
+    <string name="translate_recognized">Translate the recognized %s to %s</string>
+    <string name="translate_source_display">Bilingual display</string>
+    <string name="translate_source_display_desc">When enabled, both the source language and the target language will be displayed on the glasses simultaneously</string>
+
+    <!--Simultaneous-->
+</resources>

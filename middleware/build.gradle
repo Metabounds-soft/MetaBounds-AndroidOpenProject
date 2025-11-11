@@ -1,0 +1,82 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-parcelize'
+    id 'kotlin-kapt'
+}
+apply from: "${rootDir}/version.gradle"
+
+android {
+    namespace 'com.xr.common.middleware'
+    compileSdk COMPILE_SDK_VERSION
+
+    defaultConfig {
+        minSdkVersion MIN_SDK_VERSION
+        targetSdkVersion TARGET_SDK_VERSION
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+    buildFeatures {
+        viewBinding true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+    api fileTree(dir: 'libs', include: ['*.jar', '*.aar'])
+    implementation project(':lib_opus')
+
+    api "androidx.constraintlayout:constraintlayout:$CONSTRAINTLAYOUT"
+    api "androidx.lifecycle:lifecycle-livedata-ktx:$LIVEDATA"
+    api "androidx.lifecycle:lifecycle-viewmodel-ktx:$VIEWMODEL"
+    api "androidx.viewpager2:viewpager2:$VIEWPAGER2"
+    api "com.blankj:utilcodex:$COM_BLANKJ_UTILCODEX"
+    api "com.github.bumptech.glide:glide:$GLIDE"
+    api "com.squareup.retrofit2:retrofit:$RETROFIT"
+    api "com.squareup.retrofit2:converter-gson:$RETROFIT_CONVERTER_GSON"
+    api "com.squareup.retrofit2:adapter-rxjava:$RETROFIT_ADAPTER_RXJAVA"
+    api "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:$retrofit2_kotlin_coroutines_adapter"
+    api "com.squareup.okhttp3:logging-interceptor:$OKHTTP_LOGGING_INTERCEPTOR"
+    api "com.airbnb.android:lottie:$LOTTIE"
+    api "com.tencent:mmkv:$MMKV"
+    api 'com.liulishuo.filedownloader:library:1.7.7'
+    api 'com.arthenica:mobile-ffmpeg-min-gpl:4.4'
+
+    //用于蓝牙数据解析
+    api "org.msgpack:msgpack-core:0.9.7"
+    api "androidx.lifecycle:lifecycle-common-java8:2.6.2"
+    api "androidx.lifecycle:lifecycle-runtime-ktx:2.6.2"
+    api "androidx.room:room-runtime:2.7.0"
+    api "androidx.room:room-guava:2.7.0"
+    api "androidx.room:room-ktx:2.7.0"
+    api "io.netty:netty-all:4.1.108.Final"
+    api "com.github.CymChad:BaseRecyclerViewAdapterHelper:$adapter_helper"
+    api "com.makeramen:roundedimageview:$roundedimageview"
+
+    kapt "androidx.room:room-compiler:2.7.0"
+
+    implementation "androidx.core:core-ktx:$KOTLIN_VERSION"
+    implementation "androidx.appcompat:appcompat:$ANDROIDX_APPCOMPAT_APPCOMPAT"
+    implementation "com.google.android.material:material:$COM_GOOGLE_ANDROID_MATERIAL_MATERIAL"
+    testImplementation "junit:junit:$JUNIT_JUNIT"
+    androidTestImplementation "androidx.test.ext:junit:$ANDROIDX_TEST_EXT_JUNIT"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$ANDROIDX_TEST_ESPRESSO_ESPRESSO_CORE"
+}

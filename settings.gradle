@@ -1,0 +1,34 @@
+pluginManagement {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+        maven { url 'https://www.jitpack.io' }
+        maven {
+            url 'https://maven.aliyun.com/repository/public'
+            mavenLocal()
+        }
+        maven { url 'https://maven.aliyun.com/repository/google' }
+    }
+}
+dependencyResolutionManagement {
+    apply from: "${rootDir}/version.gradle"
+
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        maven { url 'https://www.jitpack.io' }
+        maven {
+            url 'https://maven.aliyun.com/repository/public'
+            mavenLocal()
+        }
+        maven { url 'https://maven.aliyun.com/repository/google' }
+    }
+}
+rootProject.name = "AndroidOpenProject"
+include ':app'
+include ':portal'
+include ':middleware'
+include ':lib_opus'
+include ':lib_iflytek_speech'

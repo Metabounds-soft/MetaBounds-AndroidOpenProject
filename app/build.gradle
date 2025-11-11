@@ -1,0 +1,92 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-parcelize'
+    id 'kotlin-kapt'
+}
+apply from: "${rootDir}/version.gradle"
+Properties signingProps = new Properties()
+signingProps.load(new FileInputStream(file("signing.properties")))
+
+android {
+    namespace 'com.xr.common'
+    compileSdk COMPILE_SDK_VERSION
+
+    defaultConfig {
+        applicationId APPLICATION_ID
+        minSdkVersion MIN_SDK_VERSION
+        targetSdkVersion TARGET_SDK_VERSION
+        versionCode VERSION_CODE
+        versionName VERSION_NAME
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    signingConfigs {
+        releaseKey {
+            keyAlias signingProps['META_KEY_STORE_ALIAS']
+            keyPassword signingProps['META_KEY_STORE_KEY_PASSWD']
+            storeFile file(signingProps['META_KEY_STORE_FILE_RELEASE'])
+            storePassword signingProps['META_KEY_STORE_PASSWD']
+            v1SigningEnabled true
+            v2SigningEnabled true
+        }
+        metaboundsKey {
+            keyAlias signingProps['META_KEY_STORE_ALIAS']
+            keyPassword signingProps['META_KEY_STORE_KEY_PASSWD']
+            storeFile file(signingProps['META_KEY_STORE_FILE'])
+            storePassword signingProps['META_KEY_STORE_PASSWD']
+            v1SigningEnabled true
+            v2SigningEnabled true
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            signingConfig signingConfigs.releaseKey
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+
+        debug {
+            minifyEnabled false
+            signingConfig signingConfigs.metaboundsKey
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    packagingOptions {
+        jniLibs {
+            pickFirsts += ['lib/arm64-v8a/libc++_shared.so']
+        }
+        resources {
+            excludes += ['META-INF/LICENSE', 'META-INF/INDEX.LIST', 'META-INF/DEPENDENCIES', 'META-INF/io.netty.versions.properties']
+        }
+
+        pickFirst 'lib/arm64-v8a/libc++_shared.so'
+        pickFirst 'lib/arm64-v8a/libopus.so'
+        pickFirst 'lib/arm64-v8a/libavutil.so'
+        pickFirst 'lib/arm64-v8a/libswresample.so'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/INDEX.LIST'
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/io.netty.versions.properties'
+    }
+}
+
+dependencies {
+    implementation project(path: ':portal')
+    implementation project(path: ':middleware')
+
+    implementation "androidx.core:core-ktx:$KOTLIN_VERSION"
+    implementation "androidx.appcompat:appcompat:$ANDROIDX_APPCOMPAT_APPCOMPAT"
+    implementation "com.google.android.material:material:$COM_GOOGLE_ANDROID_MATERIAL_MATERIAL"
+    testImplementation "junit:junit:$JUNIT_JUNIT"
+    androidTestImplementation "androidx.test.ext:junit:$ANDROIDX_TEST_EXT_JUNIT"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$ANDROIDX_TEST_ESPRESSO_ESPRESSO_CORE"
+
+}

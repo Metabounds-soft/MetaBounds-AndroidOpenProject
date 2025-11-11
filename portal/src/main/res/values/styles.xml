@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="MyButton" parent="@style/Widget.AppCompat.Button.Borderless">
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="MainButton" parent="MyButton">
+        <item name="android:background">@drawable/bg_ef_c_90</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:minWidth">168dp</item>
+        <item name="android:paddingHorizontal">24dp</item>
+        <item name="android:paddingVertical">12dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/brand_color</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+</resources>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black20"
+    android:gravity="center">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="54dp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/addGlass"
+            style="@style/MainButton"
+            android:text="@string/add_glass" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/unbindGlass"
+            style="@style/MainButton"
+            android:layout_marginTop="32dp"
+            android:text="@string/unbind_glass" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/simultaneous"
+            style="@style/MainButton"
+            android:layout_marginTop="32dp"
+            android:text="@string/translate" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/remoteControl"
+            style="@style/MainButton"
+            android:layout_marginTop="32dp"
+            android:text="@string/remote_control" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="16dp" />
+    </LinearLayout>
+</ScrollView>

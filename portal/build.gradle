@@ -1,0 +1,59 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-parcelize'
+    id 'kotlin-kapt'
+}
+apply from: "${rootDir}/version.gradle"
+
+android {
+    namespace 'com.xr.common.portal'
+    compileSdk COMPILE_SDK_VERSION
+
+    defaultConfig {
+        minSdkVersion MIN_SDK_VERSION
+        targetSdkVersion TARGET_SDK_VERSION
+
+        ndk {
+            //设置支持的SO库架构（开发者可以根据需要，选择一个或多个平台的so）
+            abiFilters "arm64-v8a"
+        }
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+    implementation project(path: ':middleware')
+    implementation project(path: ':lib_opus')
+    implementation project(path: ':lib_iflytek_speech')
+
+    implementation "androidx.core:core-ktx:$KOTLIN_VERSION"
+    implementation "androidx.appcompat:appcompat:$ANDROIDX_APPCOMPAT_APPCOMPAT"
+    implementation "com.google.android.material:material:$COM_GOOGLE_ANDROID_MATERIAL_MATERIAL"
+    testImplementation "junit:junit:$JUNIT_JUNIT"
+    androidTestImplementation "androidx.test.ext:junit:$ANDROIDX_TEST_EXT_JUNIT"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$ANDROIDX_TEST_ESPRESSO_ESPRESSO_CORE"
+}

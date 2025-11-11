@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="transparent">#00000000</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="black04">#0a000000</color>
+    <color name="black08">#14000000</color>
+    <color name="black20">#33000000</color>
+    <color name="black40">#66000000</color>
+    <color name="black45">#73000000</color>
+    <color name="black65">#a6000000</color>
+    <color name="black85">#da000000</color>
+    <color name="white30">#4dffffff</color>
+    <color name="white40">#66ffffff</color>
+    <color name="white45">#73ffffff</color>
+    <color name="white85">#d9ffffff</color>
+
+    <color name="c192120">#192120</color>
+    <color name="c979B9B">#979B9B</color>
+    <color name="c0B1C1A">#0B1C1A</color>
+    <color name="c919998">#919998</color>
+    <color name="cF3F3F3">#F3F3F3</color>
+    <color name="c6A6F6E">#6A6F6E</color>
+    <color name="cAEB1B1">#AEB1B1</color>
+    <color name="c00be85">#00BE85</color>
+    <color name="main_menu_blue">#FF00BE85</color>
+    <color name="brand_color">#0064FE</color>
+    <color name="btn_highlight_normal_start">#0064FE</color>
+    <color name="btn_highlight_normal_end">#0064FE</color>
+    <color name="btn_highlight_pressed_start">#0052D0</color>
+    <color name="btn_highlight_pressed_end">#0052D0</color>
+    <color name="btn_highlight_disable_start">#73AAFE</color>
+    <color name="btn_highlight_disable_end">#73AAFE</color>
+    <color name="btn_common_normal">#E0E0E0</color>
+    <color name="btn_common_pressed">#CCCCCC</color>
+    <color name="btn_common_disable">#EBEBEB</color>
+</resources>
